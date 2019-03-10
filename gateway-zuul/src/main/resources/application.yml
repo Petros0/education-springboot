@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Gateway
+server:
+  port: 8080
+
+zuul:
+  routes:
+    employee:
+      path: /api/employees/**
+      url: http://localhost:8081/employee
+  sensitive-headers: Cookie,Set-Cookie
